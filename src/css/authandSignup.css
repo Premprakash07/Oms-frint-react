@@ -1,0 +1,65 @@
+#authandsignup {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+#authandsignup .auth {
+  background-color: white;
+  padding: 0px 20px;
+  flex: 0.33;   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(36, 167, 255);
+}
+#authandsignup .auth .title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+#authandsignup .auth form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 325px;
+}
+.auth input, .auth select {
+  margin: 5px 0px;
+}
+.auth .btn {
+  width: 100%;
+  margin-top: 10px;
+}
+.auth .changeauth {
+  cursor: pointer;
+}
+.auth .changeauth:hover {
+  text-decoration: underline;
+}
+#login, #register {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#authandsignup .about {
+  flex: 1;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(92, 190, 255);
+}
+.about div {
+  max-width: 700px;
+  text-align: center;
+}
+.about .title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
