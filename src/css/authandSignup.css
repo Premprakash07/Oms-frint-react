@@ -2,12 +2,14 @@
   display: flex;
   justify-content: space-between;
   flex: 1;
+  overflow: auto;
 }
 #authandsignup .auth {
-  background-color: white;
+  /* background-color: white; */
   padding: 0px 20px;
   flex: 0.33;   
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -15,7 +17,17 @@
 }
 #authandsignup .auth .title {
   font-size: 2rem;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+#authandsignup .error{
+  margin-bottom: 10px;
+  color: red;
+  border-radius: 3px;
+  background-color: rgba(255, 0, 0, 0.35);
+  width: 325px;
+  padding: 8px 30px;
+  text-align: center;
+  
 }
 #authandsignup .auth form {
   display: flex;
@@ -54,6 +66,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(92, 190, 255);
+  min-width: 400px;
 }
 .about div {
   max-width: 700px;

@@ -2,6 +2,7 @@
   display: flex;
   flex: 1;
   color: rgb(36, 167, 255);
+  overflow: auto;
 }
 #shop .shop-ctn {
   display: flex;
@@ -9,37 +10,91 @@
   justify-content: center;
   flex: 1;
 }
-.shop-ctn .shopinfo {
-  width: 400px;
-  background-color: rgb(216, 216, 216);
-  height: 100%;
-}
 .shop-ctn .items-ctn {
   flex: 1;
   padding: 50px 80px;
   display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
 }
 .shop-ctn .items-ctn .title {
   font-size: 2rem;
 }
-.items {
-  margin: 20px 0px;
-  display: grid;
-  gap: 30px;
+
+
+.shop-ctn .shopinfo {
+  flex: .4;
+  background-color: rgb(92, 190, 255);
+  height: 100%;
+  overflow: auto;
+}
+.shopinfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  padding: 20px;
+}
+.shopinfo .shopImg{
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-.items .item {
   border-radius: 5px;
-  padding: 15px;
-  background-color: white;
-  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1);
-  min-width: 225px;
-  min-height: 200px;
-  transition: 0.3s;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
 }
-.items .item:hover {
-  scale: 1.05;
+.shopinfo .ele{
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  width: 100%;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.shopinfo .ele .title{
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+.shopinfo .ele .details{
+  font-size: 17px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+}
+.shopinfo .ele .details .field{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.shopinfo .ele span:first-child{
+  color: black;
+  font-weight: 300;
+  font-size: 15px;
+  margin-right: 10px;
+}
+.shopinfo .ele .name{
+  font-size: 23px;
+}
+.shopinfo .addreview{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.shopinfo .addreview .btn{
+  align-self: flex-end;
+  margin-top: 10px;
+}
+.shopinfo .review-ctn{
+  font-weight: 300;
+  padding: 10px 0px;
+  border-bottom: 1px solid rgb(136, 207, 255);
+  margin: 5px 0px;
+}
+.shop-ctn .review-ctn .rating{
+  margin-bottom: 15px;
 }

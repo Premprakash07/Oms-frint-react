@@ -12,6 +12,7 @@ html {
 }
 body {
   background-color: white;
+  background: linear-gradient(45deg, rgb(151, 213, 255), white);
 }
 a{
   text-decoration: none;

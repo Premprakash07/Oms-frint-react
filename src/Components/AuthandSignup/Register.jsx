@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { shopkeeperLogin, customerLogin, logout } from "../../api/auth/auth";
 
 function Register() {
   const [registerData, setRegisterData] = useState({});
 
   const handleChange = (e) => {
-    const [name, value] = e.target;
+    const {name, value} = e.target;
 
     setRegisterData((prev) => ({ ...prev, [name]: value }));
   };
@@ -12,10 +13,10 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("register");
+    
   };
   return (
     <div id="register">
-      <div className="title">Regsiter</div>
       <form onSubmit={handleSubmit} className="register-form">
         <input
           type="text"

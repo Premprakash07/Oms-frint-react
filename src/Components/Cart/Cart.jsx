@@ -1,16 +1,17 @@
 import React from "react";
 import "../../css/cart.css";
-import CartItem from "./CartItem";
+import Item from "../modals/CartItem";
+import { useSelector } from "react-redux";
 
 function Cart() {
-  const itemList = [1, 2, 3, 4, 5];
+  const cart = useSelector(store => store.cart.cart)
   return (
     <div id="cart">
       <div className="cart-ctn ctn">
         <div className="title">My Cart</div>
         <div className="items">
-          {itemList.map((item, index) => {
-            return <CartItem itemDetails={item} key={index} />;
+          {cart.map((item, index) => {
+            return <Item itemDetails={item} key={index} />;
           })}
         </div>
       </div>

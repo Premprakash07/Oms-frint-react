@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import { userLogin, logout } from "../../api/auth/auth";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-function Login() {
-  const [loginData, setLoginData] = useState({});
+function Login({ setError }) {
+  const [loginData, setLoginData] = useState({ usertype: "customer" });
+  const dispatch = useDispatch();
+  const navigator = useNavigate();
 
   const handleChange = (e) => {
-    const [name, value] = e.target;
+    const { name, value } = e.target;
 
     setLoginData((prev) => ({ ...prev, [name]: value }));
   };
@@ -12,19 +17,29 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("submit");
+    const res = await userLogin(loginData);
+    if (res.status === 200) {
+      dispatch({
+        type: "LOGIN",
+        payload: res.json(),
+        usertype: loginData.usertype,
+      });
+      navigator("/");
+    } else {
+      setError("Bad credentials. Try again");
+    }
   };
 
   return (
     <div id="login">
-      <div className="title">Login</div>
       <form onSubmit={handleSubmit} className="login-form">
         <input
           type="text"
-          name="emai"
+          name="userEmail"
           id="email"
           placeholder="Email"
           onChange={handleChange}
-          value={loginData.email}
+          value={loginData.userEmail}
           autoComplete="off"
         />
         <input

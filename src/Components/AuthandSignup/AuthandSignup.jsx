@@ -1,15 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
 import "../../css/authandSignup.css";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function AuthandSignup() {
-  const [signin, setSignin] = useState(false);
+  const [signin, setSignin] = useState(true);
+  const [error, setError] = useState(false);
+  const navigator = useNavigate();
+  const authenticated = useSelector((store) => store.authenticated);
+
+  useEffect(() => {
+    if (authenticated) {
+      navigator("/");
+    }
+  }, []);
 
   return (
     <div id="authandsignup">
       <div className="auth">
-        {signin ? <Login /> : <Register />}
+        <div className="title">{signin ? "Login" : "Register"}</div>
+        {error && <div className="error">{error}</div>}
+        {signin ? (
+          <Login setError={setError} />
+        ) : (
+          <Register setError={setError} />
+        )}
         <div
           className="changeauth"
           onClick={() => {

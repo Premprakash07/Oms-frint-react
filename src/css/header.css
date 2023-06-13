@@ -8,7 +8,7 @@
   z-index: 1000;
 }
 #header .header-ctn {
-  padding: 20px 0px;
+  padding: 15px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,13 +22,13 @@
   width: 500px;
 }
 .header-ctn .options {
-  font-size: 25px;
+  font-size: 22px;
   display: flex;
   align-items: center;
 }
-.header-ctn .options div {
-  margin: 0px 10px;
-  padding: 5px 10px;
+.header-ctn .options a {
+  margin: 0px 8px;
+  padding: 10px 18px;
   background-color: none;
   transition: 0.3s;
   display: flex;
@@ -36,7 +36,37 @@
   cursor: pointer;
   border-bottom: 2px solid transparent;
 }
-.header-ctn .options div:hover {
-  scale: 1.3;
-  border-bottom: 2px solid white;
+.header-ctn .options .mycart{
+  position: relative;
+}
+.header-ctn .options .cartQ{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: red;
+  border-radius: 25px;
+  height: 25px;
+  vertical-align: center;
+  width: 25px;
+  text-align: center;
+}
+
+.header-ctn .options .active, .header-ctn .options a:hover {
+  background-color: rgba(45, 94, 126, 0.3);
+  border-radius: 5px;
+  border-color: white;
+}
+
+.header-ctn .options .logout-btn{
+  background-color: rgb(255, 126, 126);
+  border: none;
+  font-weight: 400;
+}
+.header-ctn .options .logout-btn:hover{
+  background-color: rgb(255, 74, 74);
 }
